@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>OSS BPJS Ketenagakerjaan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta content="OSS BPJS Ketenagakerjaan" name="description" />
+        <meta content="BPJS Ketenagakerjaan" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/images/favicon.png">
+        <!-- App bootstrap -->
+        <link href="/adminox/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/adminox/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+        <link href="/adminox/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <!-- <link href="/stylesheets/select2.min.css" rel="stylesheet">
+        <link href="/stylesheets/select2-bootstrap.css" rel="stylesheet"> -->
+        <!-- App css -->
+        <link href="/adminox/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="/adminox/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="/adminox/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="/adminox/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="/adminox/css/menu.css" rel="stylesheet" type="text/css" />
+        <link href="/adminox/css/responsive.css" rel="stylesheet" type="text/css" />
+        <link href="/adminox/css/modal_loading.css" rel="stylesheet" type="text/css" />
+        <link href="/adminox/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
+        <link href="/adminox/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+		
+		<!--SNAP MIDTRANS-->
+        <script type="text/javascript" src="https://app.midtrans.com/snap/snap.js" data-client-key="Mid-client-0GIjDQuolZkKN3v5"></script>
+
+
+        <!-- App js -->
+        <script src="/adminox/js/modernizr.min.js"></script>
+        <style type="text/css">
+            @media (max-width: 800px) {
+              .header-left {
+                width: 100%;
+              }
+              .header-right {
+                width: 100%;
+              }
+              .header-right img {
+                float: left !important;
+                margin-top: 10px;
+              }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="modal_loading">
+            <div id="text">Processing...
+            </div>
+            <div class="progress progress-lg">
+                <div class="progress-bar progress-bar-primary progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                    0%
+                </div>
+            </div>
+        </div>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    <div class="col-md-9 col-sm-9 col-xs-12 header-left">
+                                        <img src="/adminox/images/garuda.png" class="pull-left" style="margin-right: 20px">
+                                        <h3 class="" style="margin: 10px 15px 0 10px">OSS REPUBLIK INDONESIA</h3>
+                                        <h5 class="" style="margin: 0 15px 10px 0">Pelayanan Perizinan Berusaha Terintegrasi Secara Elektronik</h5>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-12 header-right">
+                                        <img src="/images/logo-bpjs.png" class="pull-right" style="height: 50px">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+    <!-- <div class="row">
+        <div class="col-sm-12">
+            <div class="text-left" id="nestable_list_menu">
+                <a href="/oss/step-2"><button type="button" class="btn btn-default waves-effect waves-light" data-action="collapse-all"><i class="fa fa-lg fa-arrow-left m-r-5"></i>Kembali</button></a>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <h4 class="m-t-0 header-title"><b>Form Tenaga Kerja</b></h4>
+                <p class="text-muted m-b-30 font-14">
+                    Silahkan lengkapi form dibawah ini sesuai dengan data tenaga kerja.
+                </p>
+
+                <div class="alert alert-icon alert-white alert-danger alert-dismissible hidden fade in" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <i class="mdi mdi-block-helper"></i>
+                    <strong>Oppss!!</strong> Masih terdapat terdapat data yang belum sesuai.
+                </div>
+                <form id="form_1" method="post" action="/oss/input-tk-nik-step1">
+                    <div class="row m-t-20">
+                        <div class="col-md-4">
+                            <div class="form-group wni">
+
+                                <label for="nik">NIK <span class="text-danger">*</span> : </label>
+                                <input type="text" name="i_nik" id="i_nik" minlength="16" maxlength="16" class="form-control required" required placeholder="Nomor eKTP"/>
+                                <input type="hidden" name="step" value="0">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group wni">
+                                <label for="nama_lengkap">Nama Lengkap <span class="text-danger">* </span> :</label>
+                                <input type="text" name="i_nama_lengkap" id="i_nama_lengkap" class="form-control required" required placeholder="Nama Sesuai e-KTP"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="tgl_lahir">Tanggal Lahir <span class="text-danger">*</span> :</label>
+                                <input type="text" name="i_tgl_lahir" id="i_tgl_lahir" class="form-control date required" placeholder="dd-mm-yyyy" required autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="tgl_lahir">&emsp;&ensp; Captcha <span class="text-danger">*</span> :</label><br>
+                                <img id="img_captcha" class="form-captcha col-sm-offset-1">
+                            </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="text" class="form-control"  name="captcha" id="captcha" minlength="13" maxlength="15" required="" placeholder="Kode Captcha">
+                            </div>
+                        </div>
+                    </div>    
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="/oss/step-2"><button type="button" class="btn btn-default btn-lg waves-effect waves-light" data-action="collapse-all"><i class="fa fa-arrow-left m-r-5"></i>Kembali</button></a>
+                            <button id="btn-submit" name="btn-submit" class="btn btn-success btn-lg waves-effect waves-light pull-right" type="button">Daftar <i class="fa fa-check m-l-5"></i></button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div> <!-- end card-box -->
+        </div><!-- end col -->
+    </div>
+    <!-- end row -->
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                 <!-- Footer -->
+
+                <footer class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                Copyright © 2018 BPJS Ketenagakerjaan. All rights reserved
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End Footer -->
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+        
+        <!-- jQuery  -->
+        <script src="/adminox/js/jquery.min.js"></script>
+        <script src="/adminox/js/bootstrap.min.js"></script>
+        <script src="/adminox/js/waves.js"></script>
+        <script src="/adminox/js/jquery.slimscroll.js"></script>
+        <script src="/adminox/js/jquery.scrollTo.min.js"></script>
+
+        <!-- App js -->
+        <script src="/adminox/js/jquery.core.js"></script>
+        <script src="/adminox/js/jquery.app.js"></script>
+        <script src="/adminox/pages/jquery-oss.js"></script>
+        <!-- Sweet-Alert  -->
+        <script src="/adminox/plugins/sweet-alert2/sweetalert2.min.js"></script>
+        <script src="/adminox/pages/jquery-oss.js"></script>
+        <script src="/assets/js/aes.js" type="text/javascript"></script>
+        <script src="/assets/js/format.js" type="text/javascript"></script>
+        
+</body>
+</html>
+
+<div id="accordion-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content p-0">
+            <div class="panel-group panel-group-joined" id="accordion-test">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <a href="/oss/step-2"><button type="button" class="btn btn-danger close">X</button></a>
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion-test" href="#collapseOne" class="collapsed">
+                                Apakah tenaga kerja sudah memiliki kartu BPJS Ketenagakerjaan ? 
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <button type="button" id="collapse_sudah" class="btn btn-primary btn-bordered waves-effect w-md" data-toggle="collapse" data-parent="#accordion-test" href="#collapseTwo"><i class="mdi mdi-account-check m-r-10 font-18 vertical-middle"></i> Sudah</button>&nbsp;
+                                    <button type="button" id="collapse_belum" class="btn btn-danger btn-bordered waves-effect w-md" data-toggle="collapse" data-parent="#accordion-test" href="#collapseThree" aria-hidden="true"><i class="mdi mdi-account-convert m-r-10 font-18 vertical-middle"></i> Belum</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="kpj" placeholder="Input No KPJ" maxlength="15">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="img_captcha_kpj" class="form-captcha">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"  name="captcha" id="captcha_kpj" minlength="13" maxlength="15" required="" placeholder="Kode Captcha">
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="#" onclick="cekStatusKpj();"><button type="button" class="btn btn-primary btn-bordered waves-effect w-md"><i class="mdi mdi-account-check m-r-10 font-18 vertical-middle"></i>Lanjut</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <div class="form-group">
+                                        <div class="radio radio-primary radio-inline">
+                                            <input type="radio" id="wni" value="WNI" name="warga_negara" checked>
+                                            <label for="inlineRadio1"> Warga Negara Indonesia (WNI) </label>
+                                        </div>
+                                        <div class="radio radio-inline radio-primary">
+                                            <input type="radio" id="wna" value="WNA" name="warga_negara">
+                                            <label for="inlineRadio2"> Warga Negara Asing (WNA)  </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary btn-bordered waves-effect w-md" class="close" data-dismiss="modal" onclick="cekKewarganegaraan()"><i class="mdi mdi-account-check m-r-10 font-18 vertical-middle"></i>Pilih</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="accordion-modal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content p-0">
+            <div class="panel-group panel-group-joined" id="accordion-test">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <a href="/oss/step-2"><button type="button" class="btn btn-danger close">X</button></a>
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion-test" href="#collapseTwo" class="collapsed">
+                               Tenaga Kerja telah terdaftar dan melakukan pengkinian data, silahkan masukkan Nomor KPJ untuk melakukan pendaftaran
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="kpj2" placeholder="Input No KPJ" maxlength="15">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="img_captcha_kpj2" class="form-captcha">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"  name="captcha" id="captcha_kpj2" minlength="13" maxlength="15" required="" placeholder="Kode Captcha">
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="#" onclick="cekStatusKpj2();"><button type="button" class="btn btn-primary btn-bordered waves-effect w-md"><i class="mdi mdi-account-check m-r-10 font-18 vertical-middle"></i>Lanjut</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                 <!-- Footer -->
+
+                <footer class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                Copyright © 2018 BPJS Ketenagakerjaan. All rights reserved
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End Footer -->
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+        
+        <!-- jQuery  -->
+        <script src="/adminox/js/jquery.min.js"></script>
+        <script src="/adminox/js/bootstrap.min.js"></script>
+        <script src="/adminox/js/waves.js"></script>
+        <script src="/adminox/js/jquery.slimscroll.js"></script>
+        <script src="/adminox/js/jquery.scrollTo.min.js"></script>
+
+        <!-- App js -->
+        <script src="/adminox/js/jquery.core.js"></script>
+        <script src="/adminox/js/jquery.app.js"></script>
+        <script src="/adminox/pages/jquery-oss.js"></script>
+        <!-- Sweet-Alert  -->
+        <script src="/adminox/plugins/sweet-alert2/sweetalert2.min.js"></script>
+        <script src="/adminox/pages/jquery-oss.js"></script>
+        <script src="/assets/js/aes.js" type="text/javascript"></script>
+        <script src="/assets/js/format.js" type="text/javascript"></script>
+        
+</body>
+</html>
+
+<script src="/adminox/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="/adminox/plugins/sweet-alert2/sweetalert2.min.js"></script>
+<script src="/javascripts/form-validation.js"></script>
+
+<script type="text/javascript">
+    window.status_nik = false;
+    var nowDate = new Date();
+    jQuery('#i_tgl_lahir').datepicker({
+        autoclose: true,
+        format: 'dd-mm-yyyy',
+        startDate: new Date(nowDate.getFullYear()-78, '00', '01'),
+        endDate: new Date(nowDate.getFullYear()-15, '00', '01')
+    });
+    $('#accordion-modal').modal({backdrop: 'static', keyboard: false, show:true});
+    $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+    $('#collapse_sudah').click(function(){
+        $('#img_captcha_kpj').attr('src','/oss/captcha?'+new Date().getTime());
+    });
+    var nik="";
+    window.tgl_lahir = "";
+    var nama = "";
+    // $('#i_nik').blur(function(){
+    //     if(nik!=$(this).val()){
+    //         nik = $(this).val();
+    //         console.log(nik.length)
+    //         if(nik.length!=16){
+								   
+				  
+    //             alertError("NIK harus berisi 16 digit angka!");
+    //         }
+    //     }
+        
+    // })
+    
+
+
+    $('#i_nama_lengkap').keyup(function() {
+        this.value = this.value.toUpperCase();
+    });
+    
+    /* digabungkan dengan aksi submit
+
+    function checkAdminduk(nik){
+        //send ajax for request data from adminduk
+        preload(true);
+        $.ajax({
+            url: '/oss/validasi-nik',
+            type: "POST",
+            data: { nik : nik, _csrf:'BqFUDkci-s5hWWXoEpZvZ_QM2fqu2f_SF-nA' },
+            success: function(data){
+            preload(false);
+            if(data.ret!='0'){
+                window.status_nik = 'T';
+                
+                swal({
+                    title: 'Perhatian!1',
+                    text: "Dengan ini saya menyatakan bahwa data yang disampaikan merupakan data yang sebenarnya dan bersedia jika data yang didaftarkan disimpan BPJS Ketenagakerjaan sebagai data peserta.",
+                    type: 'info',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya, Lanjutkan!',
+                    cancelButtonText: 'Tidak',
+                    confirmButtonClass: 'btn btn-success',
+                    cancelButtonClass: 'btn btn-danger m-l-10',
+                    buttonsStyling: false
+                }).then(function () {
+                    window.location = '/oss/input-tk-nik-invalid';
+                }, function (dismiss) {
+                    // dismiss can be 'cancel', 'overlay',
+                    // 'close', and 'timer'
+                    if (dismiss === 'cancel') {
+                            window.location = '/oss/step-2';
+                    }
+                })
+            }else{
+                window.status_nik = 'Y';
+                if(data.data > 0){
+                    $('#accordion-modal2').modal({backdrop: 'static', keyboard: false, show:true});
+                    $.ajax({
+                        url: '/oss/cekKPJ',
+                        type: "POST",
+                        data: { kpj : '',oauth:'MCRY', _csrf:'BqFUDkci-s5hWWXoEpZvZ_QM2fqu2f_SF-nA', captcha:''},
+                        success: function(data){
+                            preload(false);
+                            $('#img_captcha_kpj2').attr('src','/oss/captcha?'+new Date().getTime());
+                            $('#captcha_kpj2').val('');
+                            return false;
+                            
+                        },error : function(){
+                            e.preventDefault();
+                            preload(false);
+                            $('#img_captcha_kpj2').attr('src','/oss/captcha?'+new Date().getTime());
+                            $('#captcha_kpj2').val('');
+                            alertError("Permintaan gagal ke server! Silahkan dicoba lagi")
+                        },timeout: 180000
+                    });
+                }
+            }
+                
+            },error : function(){
+                preload(false);
+                alertError("Permintaan gagal ke server! Silahkan dicoba lagi")
+            },timeout: 180000
+        });
+
+    }
+
+ */
+
+    $( document ).ready(function() {
+   $('#btn-submit').click(function(e){
+        /* BARU*/
+        e.preventDefault();
+        
+        // console.log($('#i_tgl_lahir').val())
+        const validateNama = __validateNama($('#i_nama_lengkap').val(),$('#i_nama_lengkap').prop('required'),30,"Nama Lengkap");
+        const validateTglLahir= __validateFormatWaktu($('#i_tgl_lahir').val());
+        const validateNIK = __validateNoIdentitas($('#i_nik').val(),true);
+        
+        if(validateNama.ret===1){
+        return swal({
+          type: 'error',
+          title: 'ERROR',
+          text: validateNama.msg
+        })
+        }else if(validateTglLahir.ret===1){
+            
+        return swal({
+          type: 'error',
+          title: 'ERROR',
+          text: validateTglLahir.msg
+        })
+        }
+        else if(validateNIK.ret===1){
+            return swal({
+          type: 'error',
+          title: 'ERROR',
+          text: validateNIK.msg
+        })
+        } 
+       else if($('#captcha').val()==''){
+            alertError("Captcha tidak boleh kosong. Silahkan dikoreksi kembali");
+            $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+            $('#captcha').val('');
+            return false;
+        }
+        else{
+            tgl_lahir=validateTglLahir.formattedDate
+        // var is_valid = true;
+        // $('.required').each(function(){
+        //     if($(this).val()==""){
+        //         alertError("Masih terdapat data mandatory yang kosong. Silahkan diisi terlebih dahulu.");
+        //         is_valid = false;
+        //         return false;
+        //     }
+        // });
+
+        // if($('#captcha').val()==''){
+        //     alertError("Captcha tidak boleh kosong. Silahkan dikoreksi kembali");
+        //     $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+        //     $('#captcha').val('');
+        //     return false;
+        // }
+
+        // var nik = $("#i_nik").val();
+        // if( !isNaN(nik) && nik.length!=16 ){
+        //     alertError("NIK harus berisi nomor 16 digit.");
+        //     is_valid = false;
+        //     return false;
+        // }
+
+        // if(is_valid==false){
+        //     return false;
+        // }
+        
+        preload(false);
+
+        var delimeterTgl = $('#i_tgl_lahir').val().indexOf("-");
+        if(delimeterTgl!=-1){
+            var tglLahirSplit = $('#i_tgl_lahir').val().split('-');
+            var tgl_lahir = tglLahirSplit[1]+'/'+tglLahirSplit[0]+'/'+tglLahirSplit[2];
+        }else{
+            var tglLahirSplit = $('#i_tgl_lahir').val().split('/');
+            var tgl_lahir = tglLahirSplit[1]+'/'+tglLahirSplit[0]+'/'+tglLahirSplit[2];
+        }
+      
+        //preload(true);
+        //send ajax for request data from adminduk
+        $.ajax({
+            url: '/oss/validasi-nik',
+            type: "POST",
+            data: { 
+                nik : $('#i_nik').val(),
+                _csrf:'BqFUDkci-s5hWWXoEpZvZ_QM2fqu2f_SF-nA',
+                captcha:$('#captcha').val()
+            },
+            success: function(data){
+            preload(true);
+            if(data.ret!='0'){
+                window.status_nik = 'T';
+                
+                swal({
+                    title: 'Perhatian!',
+                    text: "Dengan ini saya menyatakan bahwa data yang disampaikan merupakan data yang sebenarnya dan bersedia jika data yang didaftarkan disimpan BPJS Ketenagakerjaan sebagai data peserta.",
+                    type: 'info',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya, Lanjutkan!',
+                    cancelButtonText: 'Tidak',
+                    confirmButtonClass: 'btn btn-success',
+                    cancelButtonClass: 'btn btn-danger m-l-10',
+                    buttonsStyling: false
+                }).then(function () {
+                    window.location = '/oss/input-tk-nik-invalid';
+                }, function (dismiss) {
+                    // dismiss can be 'cancel', 'overlay',
+                    // 'close', and 'timer'
+                    if (dismiss === 'cancel') {
+                            window.location = '/oss/step-2';
+                    }
+                })
+            }
+            if(data.ret =='-4'){
+                preload(false);
+                $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+                $('#captcha').val('');
+                alertError(data.msg);
+                return false;
+            }
+            if(data.ret == '0'){
+                window.status_nik = 'Y';
+                if(data.data > 0){
+                    $.ajax({
+                        url: '/oss/validasiFormTk',
+                        type: "POST",
+                        data: {
+                            i_nama_lengkap : $('#i_nama_lengkap').val(),
+                            i_nik : $('#i_nik').val(),
+                            i_tgl_lahir : tgl_lahir,
+                            type_form : 'input-tk-nik-step1'
+                        },
+                        success: function(data){
+                            //console.log(data)
+                            if(data.ret=='0'){
+                                swal({
+                                    title: 'Perhatian!',
+                                    text: "NIK telah terdaftar, apakah anda ingin melanjutkan dengan Nomor Kepesertaan yang telah terdaftar?",
+                                    type: 'info',
+                                    showCancelButton: true,
+                                    confirmButtonText: 'Ya, Lanjutkan!',
+                                    cancelButtonText: 'Tidak',
+                                    confirmButtonClass: 'btn btn-success',
+                                    cancelButtonClass: 'btn btn-danger m-l-10',
+                                    buttonsStyling: false
+                                }).then(function () {
+                                    $('#accordion-modal2').modal({backdrop: 'static', keyboard: false, show:true});
+                                    $.ajax({
+                                        url: '/oss/cekKPJ',
+                                        type: "POST",
+                                        data: { kpj : '',oauth:'MCRY', _csrf:'BqFUDkci-s5hWWXoEpZvZ_QM2fqu2f_SF-nA', captcha:''},
+                                        success: function(data){
+                                            preload(false);
+                                            $('#img_captcha_kpj2').attr('src','/oss/captcha?'+new Date().getTime());
+                                            $('#captcha_kpj2').val('');
+                                            return false;
+                                            
+                                        },error : function(){
+                                            e.preventDefault();
+                                            preload(false);
+                                            $('#img_captcha_kpj2').attr('src','/oss/captcha?'+new Date().getTime());
+                                            $('#captcha_kpj2').val('');
+                                            alertError("Permintaan gagal ke server! Silahkan dicoba lagi")
+                                        },timeout: 180000
+                                    });
+                                }, function (dismiss) {
+                                     $.ajax({
+                                        url: '/oss/cekNikExists',
+                                        type: "POST",
+                                        data: {
+                                            kpj : "",
+                                            nik : $('#i_nik').val(),
+                                            _csrf:'BqFUDkci-s5hWWXoEpZvZ_QM2fqu2f_SF-nA',
+                                            captcha:$('#captcha').val()
+                                        },
+                                        success: function(data){
+                                            if(data.ret=='0'){
+                                                if(window.status_nik=='Y'){
+                                                    $.ajax({
+                                                        url: '/oss/validasiFormTk',
+                                                        type: "POST",
+                                                        data: {
+                                                            i_nama_lengkap : $('#i_nama_lengkap').val(),
+                                                            i_nik : $('#i_nik').val(),
+                                                            i_tgl_lahir : tgl_lahir,
+                                                            type_form : 'input-tk-nik-step1'
+                                                        },
+                                                        success: function(data){
+                                                            if(data.ret!='0'){
+                                                                swal({
+                                                                    title: 'Perhatian!',
+                                                                    text: "Dengan ini saya menyatakan bahwa data yang disampaikan merupakan data yang sebenarnya dan bersedia jika data yang didaftarkan disimpan BPJS Ketenagakerjaan sebagai data peserta.",
+                                                                    type: 'info',
+                                                                    showCancelButton: true,
+                                                                    confirmButtonText: 'Ya, Lanjutkan!',
+                                                                    cancelButtonText: 'Tidak',
+                                                                    confirmButtonClass: 'btn btn-success',
+                                                                    cancelButtonClass: 'btn btn-danger m-l-10',
+                                                                    buttonsStyling: false
+                                                                }).then(function () {
+                                                                    window.location = '/oss/input-tk-nik-invalid';
+                                                                }, function (dismiss) {
+                                                                    // dismiss can be 'cancel', 'overlay',
+                                                                    // 'close', and 'timer'
+                                                                    if (dismiss === 'cancel') {
+                                                                        window.location = '/oss/step-2';
+                                                                    }
+                                                                })
+                                                            }else{
+                                                                $('form').submit();
+                                                            }
+                                                        },error : function(){
+                                                            e.preventDefault();
+                                                            preload(false);
+                                                            alertError("Permintaan gagal ke server! Silahkan dicoba lagi")
+                                                        },timeout: 180000
+                                                    });
+                                                }else {
+                                                    //$("form").attr("action", "/oss/input-tk-nik-invalid-step1");
+                                                    $("form").attr("action", "/oss/input-tk-nik-invalid");
+                                                    $('form').submit();
+                                                }   
+                                            }else{
+                                                preload(false);
+                                                $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+                                                $('#captcha').val('');
+                                                alertError(data.msg);
+                                                return false;
+                                            }
+                                        },error : function(){
+                                            e.preventDefault();
+                                            preload(false);
+                                            $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+                                            $('#captcha').val('');
+                                            alertError("Permintaan gagal ke server! Silahkan dicoba lagi")
+                                        },timeout: 180000
+                                    });
+                                })
+                            }else{
+                                swal({
+                                        title: 'Perhatian!',
+                                        text: "Dengan ini saya menyatakan bahwa data yang disampaikan merupakan data yang sebenarnya dan bersedia jika data yang didaftarkan disimpan BPJS Ketenagakerjaan sebagai data peserta.",
+                                        type: 'info',
+                                        showCancelButton: true,
+                                        confirmButtonText: 'Ya, Lanjutkan!',
+                                        cancelButtonText: 'Tidak',
+                                        confirmButtonClass: 'btn btn-success',
+                                        cancelButtonClass: 'btn btn-danger m-l-10',
+                                        buttonsStyling: false
+                                    }).then(function () {
+                                        window.location = '/oss/input-tk-nik-invalid';
+                                    }, function (dismiss) {
+                                        // dismiss can be 'cancel', 'overlay',
+                                        // 'close', and 'timer'
+                                        if (dismiss === 'cancel') {
+                                            window.location = '/oss/step-2';
+                                        }
+                                    })
+                            }
+                           /*  else{
+                                $('form').submit();
+                            } */
+                        },error : function(){
+                            e.preventDefault();
+                            preload(false);
+                            alertError("Permintaan gagal ke server! Silahkan dicoba lagi")
+                        },timeout: 180000
+                    });
+                }
+                else{
+                  $.ajax({
+                        url: '/oss/cekNikExists',
+                        type: "POST",
+                        data: {
+                            kpj : "",
+                            nik : $('#i_nik').val(),
+                            _csrf:'BqFUDkci-s5hWWXoEpZvZ_QM2fqu2f_SF-nA',
+                            captcha:$('#captcha').val()
+                        },
+                        success: function(data){
+                            if(data.ret=='0'){
+                                if(window.status_nik=='Y'){
+                                    $.ajax({
+                                        url: '/oss/validasiFormTk',
+                                        type: "POST",
+                                        data: {
+                                            i_nama_lengkap : $('#i_nama_lengkap').val(),
+                                            i_nik : $('#i_nik').val(),
+                                            i_tgl_lahir : tgl_lahir,
+                                            type_form : 'input-tk-nik-step1'
+                                        },
+                                        success: function(data){
+                                            if(data.ret!='0'){
+                                                swal({
+                                                    title: 'Perhatian!',
+                                                    text: "Dengan ini saya menyatakan bahwa data yang disampaikan merupakan data yang sebenarnya dan bersedia jika data yang didaftarkan disimpan BPJS Ketenagakerjaan sebagai data peserta.",
+                                                    type: 'info',
+                                                    showCancelButton: true,
+                                                    confirmButtonText: 'Ya, Lanjutkan!',
+                                                    cancelButtonText: 'Tidak',
+                                                    confirmButtonClass: 'btn btn-success',
+                                                    cancelButtonClass: 'btn btn-danger m-l-10',
+                                                    buttonsStyling: false
+                                                }).then(function () {
+                                                    window.location = '/oss/input-tk-nik-invalid';
+                                                }, function (dismiss) {
+                                                    // dismiss can be 'cancel', 'overlay',
+                                                    // 'close', and 'timer'
+                                                    if (dismiss === 'cancel') {
+                                                        window.location = '/oss/step-2';
+                                                    }
+                                                })
+                                            }else{
+                                                $('form').submit();
+                                            }
+                                        },error : function(){
+                                            e.preventDefault();
+                                            preload(false);
+                                            alertError("Permintaan gagal ke server! Silahkan dicoba lagi")
+                                        },timeout: 180000
+                                    });
+
+                                }else {
+                                    //$("form").attr("action", "/oss/input-tk-nik-invalid-step1");
+                                    $("form").attr("action", "/oss/input-tk-nik-invalid");
+                                    $('form').submit();
+                                }   
+                            }else{
+                                preload(false);
+                                $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+                                $('#captcha').val('');
+                                alertError(data.msg);
+                                return false;
+                            }
+                        },error : function(){
+                            e.preventDefault();
+                            preload(false);
+                            $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+                            $('#captcha').val('');
+                            alertError("Permintaan gagal ke server! Silahkan dicoba lagi")
+                        },timeout: 180000
+                    });
+                }
+            }if(data.ret== '1'){
+                return swal({
+                    type: 'error',
+                    title: 'ERROR',
+                    text: data.msg
+                })
+            }
+                
+            },error : function(){
+                preload(false);
+                alertError("Permintaan gagal ke server! Silahkan dicoba lagi")
+            },timeout: 180000
+        });
+        /* END*/
+        /*YANG LAMA
+         e.preventDefault();
+        
+        var is_valid = true;
+        $('.required').each(function(){
+            if($(this).val()==""){
+                alertError("Masih terdapat data mandatory yang kosong. Silahkan diisi terlebih dahulu.");
+                is_valid = false;
+                return false;
+            }
+        });
+
+        if($('#captcha').val()==''){
+            alertError("Captcha tidak boleh kosong. Silahkan dikoreksi kembali");
+            $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+            $('#captcha').val('');
+            return false;
+        }
+
+        var nik = $("#i_nik").val();
+        if( !isNaN(nik) && nik.length!=16 ){
+            alertError("NIK harus berisi nomor 16 digit.");
+            is_valid = false;
+            return false;
+        }
+
+        if(is_valid==false){
+            return false;
+        }
+        
+        preload(true);
+
+        var delimeterTgl = $('#i_tgl_lahir').val().indexOf("-");
+        if(delimeterTgl!=-1){
+            var tglLahirSplit = $('#i_tgl_lahir').val().split('-');
+            var tgl_lahir = tglLahirSplit[1]+'/'+tglLahirSplit[0]+'/'+tglLahirSplit[2];
+        }else{
+            var tglLahirSplit = $('#i_tgl_lahir').val().split('/');
+            var tgl_lahir = tglLahirSplit[1]+'/'+tglLahirSplit[0]+'/'+tglLahirSplit[2];
+        } */
+
+        /* $.ajax({
+            url: '/oss/cekNikExists',
+            type: "POST",
+            data: {
+                kpj : "",
+                nik : $('#i_nik').val(),
+                _csrf:'BqFUDkci-s5hWWXoEpZvZ_QM2fqu2f_SF-nA',
+                captcha:$('#captcha').val()
+            },
+            success: function(data){
+                if(data.ret=='0'){
+                    if(window.status_nik=='Y'){
+                        $.ajax({
+                            url: '/oss/validasiFormTk',
+                            type: "POST",
+                            data: {
+                                i_nama_lengkap : $('#i_nama_lengkap').val(),
+                                i_nik : $('#i_nik').val(),
+                                i_tgl_lahir : tgl_lahir,
+                                type_form : 'input-tk-nik-step1'
+                            },
+                            success: function(data){
+                                if(data.ret!='0'){
+                                    swal({
+                                        title: 'Perhatian!2',
+                                        text: "Dengan ini saya menyatakan bahwa data yang disampaikan merupakan data yang sebenarnya dan bersedia jika data yang didaftarkan disimpan BPJS Ketenagakerjaan sebagai data peserta.",
+                                        type: 'info',
+                                        showCancelButton: true,
+                                        confirmButtonText: 'Ya, Lanjutkan!',
+                                        cancelButtonText: 'Tidak',
+                                        confirmButtonClass: 'btn btn-success',
+                                        cancelButtonClass: 'btn btn-danger m-l-10',
+                                        buttonsStyling: false
+                                    }).then(function () {
+                                        window.location = '/oss/input-tk-nik-invalid';
+                                    }, function (dismiss) {
+                                        // dismiss can be 'cancel', 'overlay',
+                                        // 'close', and 'timer'
+                                        if (dismiss === 'cancel') {
+                                            window.location = '/oss/step-2';
+                                        }
+                                    })
+                                }else{
+                                    $('form').submit();
+                                }
+                            },error : function(){
+                                e.preventDefault();
+                                preload(false);
+                                alertError("Permintaan gagal ke server! Silahkan dicoba lagi")
+                            },timeout: 180000
+                        });
+
+                    }else {
+                        //$("form").attr("action", "/oss/input-tk-nik-invalid-step1");
+                        $("form").attr("action", "/oss/input-tk-nik-invalid");
+                        $('form').submit();
+                    }   
+                }else{
+                    preload(false);
+                    $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+                    $('#captcha').val('');
+                    alertError(data.msg);
+                    return false;
+                }
+            },error : function(){
+                e.preventDefault();
+                preload(false);
+                $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+                $('#captcha').val('');
+                alertError("Permintaan gagal ke server! Silahkan dicoba lagi")
+            },timeout: 180000
+        });
+        
+		
+         */
+        }
+        })
+       
+    });
+    
+
+    function cekStatusKpj(){
+        var kpj = $('#kpj').val();
+        var lala ={ kpj : kpj,oauth:'MCRY', _csrf:'BqFUDkci-s5hWWXoEpZvZ_QM2fqu2f_SF-nA', captcha:$('#captcha_kpj').val()}
+        //console.log(lala)
+        //send ajax for request data from adminduk
+        $('#accordion-modal').modal('hide');
+        preload(true);
+
+        $.ajax({
+            url: '/oss/cekKPJ',
+            type: "POST",
+            data: { kpj : kpj,oauth:'MCRY', _csrf:'BqFUDkci-s5hWWXoEpZvZ_QM2fqu2f_SF-nA', captcha:$('#captcha_kpj').val()},
+            success: function(data){
+                // console.log(data);
+                preload(false);
+                $('#img_captcha_kpj').attr('src','/oss/captcha?'+new Date().getTime());
+                $('#captcha_kpj').val('');
+                if(data.ret=='0'){
+                    var message = "Tenaga Kerja atas nama "+data.nama_tk+" terdaftar sebagai peserta BPJS Ketenagakerjaan. Silahkan lengkapi data profil tenaga kerja.";
+					
+                    swal({
+                        title: 'Berhasil!',
+                        text: message,
+                        type: 'success',
+                        showConfirmButton: true,
+                        allowOutsideClick: false,
+                        showCancelButton: false,
+                        confirmButtonText: 'Lanjutkan',
+                        showLoaderOnConfirm: true,
+                        confirmButtonClass: 'btn btn-success',
+                        cancelButtonClass: 'btn btn-danger m-l-10 cancel',
+											 
+                        onClose: function(){
+                            window.location = "/oss/input-tk-kpj-step1"; // SET PARENT URL JIKA INGIN RELOAD PAGE
+										   
+															  
+											   
+												   
+															 
+                        }
+                    });
+                    
+                }else{
+                    preload(false);
+                    alertError(data.msg , "/oss/input-tk");
+                    
+                    setTimeout(function(){
+                        $('#accordion-modal').modal('show');
+                    }, 2000);
+                    return false;
+                    
+                }
+            },error : function(){
+                preload(false);
+                $('#img_captcha_kpj').attr('src','/oss/captcha?'+new Date().getTime());
+                $('#captcha_kpj').val('');
+                alertErrorRedirect("Permintaan gagal ke server! Silahkan dicoba lagi" , "/oss/input-tk");
+            }
+        });
+    }
+
+
+
+
+							
+								  
+
+    function cekStatusKpj2(){
+        var kpj = $('#kpj2').val();
+        //send ajax for request data from adminduk
+        $('#accordion-modal2').modal('hide');
+        preload(true);
+
+        $.ajax({
+            url: '/oss/cekKPJ',
+            type: "POST",
+            data: { kpj : kpj,oauth:'MCRY', _csrf:'BqFUDkci-s5hWWXoEpZvZ_QM2fqu2f_SF-nA', captcha:$('#captcha_kpj2').val()},
+            success: function(data){
+                //console.log(data);
+                preload(false);
+                if(data.ret=='0'){
+                    var message = "Tenaga Kerja atas nama "+data.nama_tk+" terdaftar sebagai peserta BPJS Ketenagakerjaan. Silahkan lengkapi data profil tenaga kerja.";
+                    swal({
+                        title: 'Berhasil!',
+                        text: message,
+                        type: 'success',
+                        showConfirmButton: true,
+                        allowOutsideClick: false,
+                        showCancelButton: false,
+                        confirmButtonText: 'Lanjutkan',
+                        showLoaderOnConfirm: true,
+                        confirmButtonClass: 'btn btn-success',
+                        cancelButtonClass: 'btn btn-danger m-l-10 cancel',
+                        onClose: function(){
+                            //console.log('/oss/input-tk-kpj-step1');
+                            window.location = "/oss/input-tk-kpj-step1"; // SET PARENT URL JIKA INGIN RELOAD PAGE
+                        }
+                    });
+                    
+                }else{
+                    preload(false);
+                    alertError(data.msg , "/oss/input-tk");
+                    $('#img_captcha_kpj2').attr('src','/oss/captcha?'+new Date().getTime());
+                    $('#captcha_kpj2').val('');
+                    setTimeout(function(){
+                        $('#accordion-modal2').modal('show');
+                    }, 2000);
+                    return false;
+                    
+                }
+            },error : function(){
+                preload(false);
+                $('#img_captcha_kpj2').attr('src','/oss/captcha?'+new Date().getTime());
+                $('#captcha_kpj2').val('');
+                alertErrorRedirect("Permintaan gagal ke server! Silahkan dicoba lagi" , "/oss/input-tk");
+            }
+        });
+    }
+
+
+    function cekKewarganegaraan(){
+        if ($("#wna").prop("checked")) {
+            window.location = '/oss/input-tk-asing-step1?id='+Math.random();
+        } else {
+            //error handling captcha tk baru selalu gagal (ret -4) saat inputan pertama
+            $.ajax({
+                url: '/oss/cekNikExists',
+                type: "POST",
+                data: {
+                    oauth:'MCRY', _csrf:'BqFUDkci-s5hWWXoEpZvZ_QM2fqu2f_SF-nA', captcha:'' 
+                },
+                success: function(data){
+                    preload(false);
+                    $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+                    $('#captcha').val('');
+                    return false;
+                    
+                },error : function(){
+                    e.preventDefault();
+                    preload(false);
+                    $('#img_captcha').attr('src','/oss/captcha?'+new Date().getTime());
+                    $('#captcha').val('');
+                    alertError("Permintaan gagal ke server! Silahkan dicoba lagi")
+                },timeout: 180000
+            });
+        }
+    }
+</script>
+</body>
+</html>
