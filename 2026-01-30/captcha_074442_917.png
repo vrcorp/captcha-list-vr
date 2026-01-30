@@ -1,0 +1,415 @@
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>MAINTENANCE BPJAMSOSTEK</title>
+
+        <!-- Awal Stylesheet -->
+        <style>
+            /* Screen <400px */
+            @media screen and (max-width: 405px) {
+            *{
+                color : white;
+            }
+
+            #left-column h1 {
+                    font-size : 32px;
+                    padding-top: 30px;
+            }
+
+            #left-column h2 {
+                    font-size : 14px;
+                    margin-right: 132px;
+            }
+
+            .info{
+                font-size : 14px;
+                text-align : center !important;
+                color : black !important;
+            }
+
+            .row {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .sorry  {
+                text-align : center !important;
+            }
+
+            .sorry span{
+                padding : 5px 20px 5px 20px;
+                background-color : #48B653;
+                border-radius : 20px;
+            }
+
+            .laman {
+                text-align : center !important;
+                margin-right : 0px !important;
+            }
+
+            .laman em{
+                /* padding : 5px 20px 5px 20px;
+                background-color : #48B653;
+                border-radius : 20px; */
+                color : black !important;
+            }
+
+            h1 img{
+                margin-right: auto;
+            }
+
+            table{
+                padding : 10px;
+                background-color : white;
+                border-radius : 10px;
+                margin-right : auto;
+            }
+            }
+
+            /* screen <999px */
+            @media screen and (max-width: 999px) {
+            *{
+                color : white;
+            }
+
+            .info{
+                text-align : center !important;
+                color : black !important;
+            }
+
+            .row {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .sorry  {
+                text-align : center !important;
+            }
+
+            .sorry span{
+                padding : 5px 20px 5px 20px;
+                background-color : #48B653;
+                border-radius : 20px;
+            }
+
+            .laman {
+                text-align : center !important;
+                margin-right : 0px !important;
+            }
+
+            .laman em{
+                /* padding : 5px 20px 5px 20px;
+                background-color : #48B653;
+                border-radius : 20px; */
+                color : black !important;
+            }
+
+            h1 img{
+                margin-right: auto;
+            }
+
+            table{
+                padding : 10px;
+                background-color : white;
+                border-radius : 10px;
+                margin-right : auto;
+            }
+            }
+
+             /* screen 1000px - 1059px*/
+            @media screen and (min-width: 1000px) and (max-width: 1059px){
+                #right-column img {
+                    /* background-color: white; */
+                    height : 280px;
+                    padding-top: 50px;
+                }
+
+                #left-column h1 {
+                    font-size : 48px;
+                    padding-top: 30px;
+                }
+
+                #left-column h2 {
+                    font-size : 20px;
+                    margin-right: 132px;
+                }
+
+                #logoAtas {
+                    height : 55px;
+                }
+
+                .info{
+                    font-size : 18px;
+                    padding-top : 55px;
+                }
+
+                td img {
+                    height : 30px;
+                }   
+            }
+
+            /* screen 1060px - 1144px */
+            @media screen and (min-width: 1060px) and (max-width: 1144px){
+                #right-column img {
+                    /* background-color: white; */
+                    height : 310px;
+                    padding-top: 25px;
+                }
+
+                #left-column h1 {
+                    font-size : 56px;
+                    padding-top: 20px;
+                }
+
+                #left-column h2 {
+                    font-size : 20px;
+                }
+
+                #logoAtas {
+                    height : 65px;
+                }
+
+                .info{
+                    font-size : 18px;
+                    padding-top : 35px;
+                }
+
+                td img {
+                    height : 27px;
+                }
+            }
+
+            /* screen 1145px - 1400px */
+            @media screen and (min-width: 1145px) and (max-width: 1400px) {
+                #right-column img {
+                    /* background-color: white; */
+                    height : 335px;
+                    padding-top: 25px;
+                }
+
+                #left-column h1 {
+                    font-size : 64px;
+                }
+
+                #left-column h2 {
+                    font-size : 24px;
+                }
+
+                #logoAtas {
+                    height : 75px;
+                }
+
+                .info{
+                    font-size : 20px;
+                    padding-top : 25px;
+                }
+
+                td img {
+                    height : 30px;
+                }
+            }
+
+            /* screen 1385px - 1400px */
+            @media screen and (min-width: 1385px) and (max-width: 1400px){
+                #left-column h2 {
+                    margin-right: 150px;
+                }
+            }
+
+            /* screen 1401px - 1550px */
+            @media screen and (min-width : 1401px) and (max-width: 1550px){
+                #right-column img {
+                    /* background-color: white; */
+                    height : 400px;
+                    padding-top: 25px;
+                }
+
+                #left-column h1 {
+                    font-size : 72px;
+                }
+
+                #left-column h2 {
+                    font-size : 26px;
+                    margin-right: 160px;
+                }
+
+                #logoAtas {
+                    height : 75px;
+                }
+
+                .info{
+                    font-size : 20px;
+                    padding-top : 25px;
+                }
+
+                td img {
+                    height : 30px;
+                }
+            }
+
+            /* screen >1551px */
+
+            @media screen and (min-width: 1551px) {
+                #right-column img {
+                    /* background-color: white; */
+                    height : 450px;
+                    padding-top: 75px;
+                }
+
+                #left-column h1 {
+                    font-size : 84px;
+                    padding-top : 30px;
+                }
+
+                #left-column h2 {
+                    font-size : 28px;
+                    margin-right: 160px;
+                }
+
+                #logoAtas {
+                    height : 80px;
+                }
+
+                .info{
+                    font-size : 20px;
+                    padding-top : 45px;
+                }
+
+                td img {
+                    height :35px;
+                }
+
+                td{
+                margin-right: 100px;
+                }
+            }
+
+
+            *{
+                font-family: 'Rubik', sans-serif;
+            }
+
+            body{
+                background-image : url('https://ecdn.bpjsketenagakerjaan.go.id/asset/maintenance/Undermaintenance.png');
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            /* button{
+                background-color: white;
+                margin-left: 5px;
+                border : white;
+                border-radius: 20px;
+            } */
+
+            td{
+                padding: 0px;
+            }
+
+            em{
+                margin-right: 40px;
+            }
+
+        .column{
+                color : white;
+                margin-left : 2.5%;
+            }
+
+            #left-column{
+                margin-top: 7.5%;
+            }
+
+            #right-column{
+                margin-right: 3.5%;
+            }
+
+            .sorry{
+                font-size : 48px;
+                font-weight : bold;
+                margin:10px;
+                margin-left:3px;
+                color: white;
+                text-align : left;
+            }
+
+            .laman{
+                margin-top : 10px;
+                margin-left: 5px;
+                margin-right: 125px;
+                font-size : 18px;
+                font-weight : normal;
+                text-align: left;
+            }
+
+            .row {
+            display: flex;
+            }
+
+            .column {
+            flex: 50%;
+            }
+
+        </style>
+        <!-- Akhir Stylesheet -->
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Rubik'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <!-- Akhir Google Fonts -->
+
+
+    </head>
+
+    <body>
+        <!-- <h1 style="text-align: center;" style="text-decoration: underline;"><span style="text-decoration: underline;"><img src="https://bpjamsostek.com/gangguan.gif" alt="" width="161" height="146" /></span></h1> -->
+        <p><img id="logoAtas" class="fr-fic fr-dib" style="display: block; margin-left: auto; margin-right: 30px;" src="https://ecdn.bpjsketenagakerjaan.go.id/asset/maintenance/logoBpjs.png" alt="bpjamsotek logo" height="50" /></p>
+        <!-- <h1 style="text-align: start;"><span >MOHON MAAF</span></h1> -->
+        <!-- <h2 style="text-align: start;"><em>Halaman yang anda kunjungi saat ini sedang dalam pengembangan/peningkatan kapasitas</em></h2> -->
+        <div class="row">
+            <div class="column" id="left-column">
+            <h1 class="sorry"><span >MOHON MAAF</span></h1>
+                <!-- <button><h1 class="sorry" style="text-align: start;"><span >MOHON MAAF</span></h1></button> -->
+                <h2 class="laman"><em style="font-style: normal;">Halaman yang anda kunjungi saat ini sedang dalam pengembangan atau peningkatan kapasitas.</em></h2>
+            </div>
+
+            <div class="column" id="right-column">
+            <h1><img style="display: block; margin-left: auto;" src="https://ecdn.bpjsketenagakerjaan.go.id/asset/maintenance/dev2.gif" alt="GIF development"  height="310px" /></h1>
+            <!-- <h1><img style="display: block; margin-left: auto;" src="assets/dev-hp.gif" alt="GIF development"  height="310px" /></h1> -->
+            </div>
+        </div>
+
+        <!-- <h1><img style="display: block; margin-left: auto;" src="https://www.bpjamsostek.com/dev2.gif" alt="GIF development"  height="430" /></h1> -->
+        <!-- <h2 style="text-align: center;">Stay Updated!</h2> -->
+        <h4 class="info" style="text-align: right; margin-top: 50px; margin-bottom: 10px; margin-right:35px;">Dapatkan informasi seputar BPJamsostek :</h4>
+        <table style="height: 54px; width: 462px; margin-left: auto;" cellspacing="0" cellpadding="1">
+        <tbody>
+        <tr>
+        <td>
+        <a title="Call Center 175" href="https://www.bpjsketenagakerjaan.go.id/kontak.html" target="_blank" rel="noopener"><img class="fr-fic fr-dib" src="https://ecdn.bpjsketenagakerjaan.go.id/asset/maintenance/icons/logo-call-center.png" alt="call center bpjstk" height="25" /></a>
+        <!-- <p style="margin-left: 75px; margin-right:50px;"></p> -->
+        </td>
+        <td ><a title="Whatsapp" href="https://api.whatsapp.com/send?phone=6281380070175&amp;text=Halo%20BPJSTK" target="_blank" rel="noopener"><img class="fr-fic fr-dib" src="https://ecdn.bpjsketenagakerjaan.go.id/asset/maintenance/icons/logo-wa.png" alt="whatsapp bpjstk" height="25" /></a></td>
+        <td ><a title="Instagram resmi BPJamsostek" href="https://www.instagram.com/bpjs.ketenagakerjaan/" target="_blank" rel="noopener"><img class="fr-fic fr-dib" src="https://ecdn.bpjsketenagakerjaan.go.id/asset/maintenance/icons/logo-ig.png" alt="Instagram bpjstk" height="25" /></a></td>
+        <td ><a title="Twitter Resmi BPJamsostek" href="https://twitter.com/BPJSTKinfo" target="_blank" rel="noopener"><img class="fr-fil fr-dib" src="https://ecdn.bpjsketenagakerjaan.go.id/asset/maintenance/icons/logo-twt.png" alt="twitter bpjstk" height="23"/></a></td>
+        <td ><a title="Facebook Resmi BPJamsostek" href="https://www.facebook.com/BPJSTKinfo/" target="_blank" rel="noopener"><img class="fr-fil fr-dib" src="https://ecdn.bpjsketenagakerjaan.go.id/asset/maintenance/icons/logo-fb.png" alt="facebook bpjstk" height="25" /></a></td>
+        <td ><a title="Youtube BPJamsostek" href="https://www.youtube.com/user/BPJSTKinfo" target="_blank" rel="noopener"><img class="fr-fil fr-dib" src="https://ecdn.bpjsketenagakerjaan.go.id/asset/maintenance/icons/logo-yt.png" alt="youtube bpjstk" height="23"/></a></td>
+        <td ><a title="Aplikasi Mobile BPJamsostek" href="https://www.bpjsketenagakerjaan.go.id/mobile" target="_blank" rel="noopener"><img class="fr-fic fr-dib" src="https://ecdn.bpjsketenagakerjaan.go.id/asset/maintenance/icons/logo-jmo.png" alt="BPJSTKU Android mobile" height="25"/></a></td>
+        </tr>
+        </tbody>
+        </table>
+        <!-- <h4 style="text-align: center;">&nbsp;</h4>> -->
+    </body>
+
+</html>
+
+        
